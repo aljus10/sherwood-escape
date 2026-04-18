@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sherwood Escape</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="hud">
+    <div class="brand">
+      <div class="brand__eyebrow">Arcade browser game</div>
+      <h1>Sherwood Escape</h1>
+      <p>Robin Hood is trapped on the forest road. Outrun the shadow ninjas, fire arrows, and keep the chase alive.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <span>Distance</span>
+        <strong id="distanceLabel">0 m</strong>
+      </div>
+      <div class="stat-card">
+        <span>Ninjas hit</span>
+        <strong id="killsLabel">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Speed</span>
+        <strong id="speedLabel">0</strong>
+      </div>
+    </div>
+  </div>
+
+  <main class="stage-shell">
+    <canvas id="gameCanvas" width="1365" height="768" aria-label="Sherwood Escape game"></canvas>
+
+    <div class="overlay overlay--start" id="startOverlay">
+      <div class="panel glass">
+        <div class="panel__tag">Original Robin Hood x Ninja concept</div>
+        <h2>Run the Sherwood gauntlet</h2>
+        <p>Use the arrow keys to control Robin Hood. Speed up, slow down, switch lanes, and shoot arrows before the ninjas reach him.</p>
+        <div class="control-grid">
+          <div><kbd>↑</kbd> sprint</div>
+          <div><kbd>↓</kbd> brake</div>
+          <div><kbd>←</kbd><kbd>→</kbd> dodge lanes</div>
+          <div><kbd>Space</kbd> fire arrow</div>
+          <div><kbd>R</kbd> restart after defeat</div>
+        </div>
+        <button id="startButton" class="cta">Start the chase</button>
+      </div>
+    </div>
+
+    <div class="overlay overlay--end hidden" id="endOverlay">
+      <div class="panel glass end-panel">
+        <div class="panel__tag">Shadow clan victory</div>
+        <h2>Robin was caught</h2>
+        <p id="finalSummary">The ninjas closed in before the forest opened up.</p>
+        <button id="restartButton" class="cta">Run again</button>
+      </div>
+    </div>
+
+    <div class="mobile-controls glass">
+      <button data-action="left">◀</button>
+      <button data-action="up">▲</button>
+      <button data-action="shoot">✦</button>
+      <button data-action="down">▼</button>
+      <button data-action="right">▶</button>
+    </div>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
