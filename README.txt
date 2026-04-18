@@ -2,7 +2,7 @@ Sherwood Escape
 ================
 
 What it is:
-A small original browser game inspired by the fast arcade feel of the reference, but redesigned around a Robin Hood vs ninja chase.
+A small original browser game inspired by the fast arcade feel, but redesigned around a Robin Hood vs ninja chase.
 
 Files:
 - index.html
